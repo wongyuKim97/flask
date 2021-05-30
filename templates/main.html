@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/css1.css') }}">   
+        <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+        <script>
+            window.onload = function(){
+                new Chart(document.getElementById("canvas"), {
+                    type: 'line',
+                    data: {
+                        labels: [1, '', 3, '', 5, '', 7],
+                        datasets: [{
+                            label: '테스트 데이터셋',
+                            data: [
+                                10,
+                                3,
+                                30,
+                                23,
+                                10,
+                                5,
+                                50
+                            ],
+                            borderColor: "rgba(255, 201, 14, 1)",
+                            backgroundColor: "rgba(255, 201, 14, 0.5)",
+                            fill: false,
+                            lineTension: 0
+                        },]
+                    },
+                    options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: '라인 차트 테스트'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'x축'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            ticks: {
+                                suggestedMin: 0,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'y축'
+                            }
+                        }]
+                    }
+                }})
+            };
+
+            let today = new Date();   
+
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let date = today.getDate();  // 날짜
+            let hours = today.getHours(); // 시
+            let minutes = today.getMinutes();  // 분
+        </script>
+
+        <style>
+            .logo{
+                text-align: center;
+                height: 100px;
+            }
+            .mid{
+                margin-top: 5%;
+                display: flex;
+                justify-content: center;
+            }
+            .chart{
+                width: 40%;
+            }
+            .menu{
+                display: flex;
+                justify-content: center;
+            }
+            .btn{
+                display: flex;
+                justify-content: center;
+            }
+            #saza{
+                font-size: 80px;
+                line-height: 100px;
+            }
+            #lion{
+                width: inherit;
+                height: inherit;
+                line-height: 100px; 
+            }
+            #topMenu {       
+                height: 40px;  
+            }
+            #topMenu ul li {                       
+                list-style: none;           
+                color: black;               
+                background-color: #e2c834;
+                float: left;               
+                line-height: 30px;         
+                vertical-align: middle;     
+                text-align: center;        
+            }
+            #topMenu .menuLink {                               
+                text-decoration:none;                     
+                color: black;                              
+                display: block;                            
+                width: 150px;                             
+                font-size: 12px;                           
+                font-weight: bold;                         
+                font-family: "Trebuchet MS", Dotum, Arial; 
+            }
+            #topMenu .menuLink:hover {            
+                color: black;                  
+                background-color: #c9c60b;   
+            }
+            #btn{
+                border: solid 2px grey;
+                border-radius: 12px;
+                background-color: #c9c60b;
+                text-align: center;
+                width: 5%; 
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/lion.png') }}" alt="logo" id="lion">
+        </div>
+        <div class="menu">
+            <nav id="topMenu" >
+                <ul>
+                        <li><a class="menuLink" href={{ url_for('main') }}>Home</a></li>
+                        <li><a class="menuLink" href={{ url_for('news') }}>오늘의 뉴스</a></li>
+                        <li><a class="menuLink" href={{ url_for('reddit') }}>레딧</a></li>
+                        <li><a class="menuLink" href={{ url_for('introduce') }}>소개</a></li>
+                </ul>
+        </nav>
+        </div>
+        <div class="mid">
+            <div class="chart">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div class="btn">
+            <a id="btn" href={{ url_for('result') }}>예측하기</a>
+        </div>    
+
+    </body>
+
+</html>

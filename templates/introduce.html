@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            .logo{
+                text-align: center;
+                height: 100px;
+            }
+            .mid{
+                margin-top: 5%;
+                display: flex;
+                justify-content: center;
+            }
+            .chart{
+                width: 40%;
+            }
+            .menu{
+                
+                display: flex;
+                justify-content: center;
+            }
+            #saza{
+                font-size: 80px;
+                line-height: 100px;
+            }
+            #lion{
+                width: inherit;
+                height: inherit;
+                line-height: 100px; 
+            }
+            #topMenu {       
+                height: 40px;  
+            }
+            #topMenu ul li {                       
+                list-style: none;           
+                color: black;               
+                background-color: #e2c834;
+                float: left;               
+                line-height: 30px;         
+                vertical-align: middle;     
+                text-align: center;        
+            }
+            #topMenu .menuLink {                               
+                text-decoration:none;                     
+                color: black;                              
+                display: block;                            
+                width: 150px;                             
+                font-size: 12px;                           
+                font-weight: bold;                         
+                font-family: "Trebuchet MS", Dotum, Arial; 
+            }
+            #topMenu .menuLink:hover {            
+                color: black;                  
+                background-color: #c9c60b;   
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="logo">
+           <img src="{{ url_for('static', filename='img/lion.png') }}" alt="logo" id="lion">
+        </div>
+        <div class="menu">
+            <nav id="topMenu" >
+                <ul>
+                    <li><a class="menuLink" href={{ url_for('main') }}>Home</a></li>
+                    <li><a class="menuLink" href={{ url_for('news') }}>오늘의 뉴스</a></li>
+                    <li><a class="menuLink" href={{ url_for('reddit') }}>레딧</a></li>
+                    <li><a class="menuLink" href={{ url_for('introduce') }}>소개</a></li>
+                </ul>
+        </nav>
+        </div>
+        <div class="mid">
+            <div class="introduce">
+                <h2 style="display: inline;">Saza 프로젝트</h2>는 암호화폐 기사 기반의 정보를 통해 미래의 암호화폐 시세를 예측하는 것을 목표로 합니다.<br>
+                최근 <h2 style="display: inline;">기사 데이터셋</h2>을 웹상에서 모아 딥러닝 기술로 학습하여 다음 날의 종가를 예측합니다.<br>
+                해당 프로젝트는 가장 잘 알려져 있는 암호화폐인 비트코인의 시세를 예측합니다.<br>
+                
+                <br><br>
+                <h3 >팀장:</h3>
+                김원규(컴퓨터공학과 4학년, 웹 담당)
+                <br><br>
+                <h3>팀원:</h3>
+                박수용(컴퓨터공학과 4학년, 데이터 담당)
+                <br><br>
+                <h3>팀원:</h3>
+                배인수(컴퓨터공학과 4학년, 인공지능 담당)
+            </div>
+        </div>    
+
+    </body>
+
+</html>

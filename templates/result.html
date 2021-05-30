@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            .logo{
+                text-align: center;
+                height: 100px;
+            }
+            .mid{
+                margin-top: 5%;
+                display: flex;
+                justify-content: center;
+            }
+            .chart{
+                width: 50%;
+            }
+            .menu{
+                display: flex;
+                justify-content: center;
+            }
+            #saza{
+                font-size: 80px;
+                line-height: 100px;
+            }
+            #lion{
+                
+                width: inherit;
+                height: inherit;
+                line-height: 100px; 
+            }
+            #topMenu {       
+                height: 40px;  
+            }
+            #topMenu ul li {                       
+                list-style: none;           
+                color: black;               
+                background-color: #e2c834;
+                float: left;               
+                line-height: 30px;         
+                vertical-align: middle;     
+                text-align: center;        
+            }
+            #topMenu .menuLink {                               
+                text-decoration:none;                     
+                color: black;                              
+                display: block;                            
+                width: 150px;                             
+                font-size: 12px;                           
+                font-weight: bold;                         
+                font-family: "Trebuchet MS", Dotum, Arial; 
+            }
+            #topMenu .menuLink:hover {            
+                color: black;                  
+                background-color: #c9c60b;   
+            }
+            #result{
+                width: 750px;
+                height: 400px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/lion.png') }}" alt="logo" id="lion">
+        </div>
+        <div class="menu">
+            <nav id="topMenu" >
+                <ul>
+                    <li><a class="menuLink" href={{ url_for('main') }}>Home</a></li>
+                    <li><a class="menuLink" href={{ url_for('news') }}>오늘의 뉴스</a></li>
+                    <li><a class="menuLink" href={{ url_for('reddit') }}>레딧</a></li>
+                    <li><a class="menuLink" href={{ url_for('introduce') }}>소개</a></li>
+                </ul>
+        </nav>
+        </div>
+        <div class="mid">
+            <div class="chart">
+                <img src="{{ url_for('static', filename= img ) }}" alt="my plot" id="result">
+            </div>
+        </div>    
+
+    </body>
+
+</html>

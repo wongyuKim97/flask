@@ -1,0 +1,12 @@
+# Created by https://www.toptal.com/developers/gitignore/api/flask
+# Edit at https://www.toptal.com/developers/gitignore?templates=flask
+
+### Flask ###
+instance/*
+!instance/.gitignore
+.webassets-cache
+.env
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
